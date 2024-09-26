@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root {
+    --issue8-color: #f6e0a4;
+    --issue7-color: #ff608c;
+    --issue6-color: #fff;
+    --issue5-color: #00c1b5;
+    --issue4-color: #ff6519;
+    --issue3-color: #ffbe00;
+    --issue2-color: #1d3fbb;
+    --issue1-color: #E30512;
+    --base: #f6e0a4;
+    --anchor: #fff;
+    --anchor-active: #e568ac;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +27,7 @@ html {
 
 body {
     font-family: "Roboto", sans-serif;
-    background-color: #f6e0a4;
+    background-color: var(--base);
     transition: all .9s;
 }
 
@@ -44,6 +58,10 @@ body {
     top: 1.375rem;
 }
 
+.email-link:hover {
+    text-decoration: underline solid #000;
+}
+
 .issue-section {
     scroll-snap-align: start;
     width: 100%;
@@ -71,11 +89,24 @@ body {
 .purchase-link {
     font-size: 0.9375rem;
     margin-top: 1.25rem;
+    text-align: center;
 }
 
 .purchase-link > a {
     text-decoration: none;
-    color: #fff;
+    color: var(--anchor);
+}
+
+.purchase-link > a:hover {
+    text-decoration: underline solid var(--anchor);
+}
+
+.purchase-link > a + * {
+    margin-top: 0.0625rem;
+}
+
+.purchase-link > span {
+    display: inline-block;
 }
 
 .select-store-link {
@@ -85,14 +116,18 @@ body {
 
 .select-store-link > a {
     text-decoration: none;
-    color: #fff;
+    color: var(--anchor);
+}
+
+.select-store-link > a:hover {
+    text-decoration: underline solid var(--anchor);
 }
 
 .footer-section-left {
     position: fixed;
-    left: 1rem;
-    bottom: 0;
-    width: 16rem;
+    left: 1.2rem;
+    bottom: 1rem;
+    width: 19rem;
 }
 
 .footer-section-right {
@@ -100,3 +135,34 @@ body {
     bottom: 0;
     right: 1rem;
 }
+
+.description {
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+}
+
+.privacy-policy {
+    display: inline-block;
+    color: #000;
+    margin-top: 1.75rem;
+    text-decoration: underline solid #000;
+}
+
+.privacy-policy:hover {
+    text-decoration: none;
+}
+
+.copyright {
+    display: block;
+    font-size: 0.75rem;
+}
+
+.copyright > a {
+    color: #000;
+    text-decoration: underline solid #000;
+}
+
+.copyright > a:hover {
+    text-decoration: none;
+}
+

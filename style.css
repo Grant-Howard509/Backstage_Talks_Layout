@@ -8,6 +8,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 body {
@@ -18,8 +19,11 @@ body {
 
 .scroller {
     scroll-snap-type: y mandatory;
-    overflow-y: auto;
+    overflow-y: scroll;
     height: 100vh;
+    width: 100%;
+    padding-right: 1rem;
+    box-sizing: content-box;
 }
 
 .backstage-logo {

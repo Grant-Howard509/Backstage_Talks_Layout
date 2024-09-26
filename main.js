@@ -1,39 +1,45 @@
 const issues = Array.from(document.querySelectorAll('.issue-section'));
 
-let issue_index = 0;
-const size = issues.length - 1;
-
-window.addEventListener('wheel', (e) => {
-    if (e.deltaY < 0) {
-        console.log('scrolling up');
-        if (issue_index > 0) {
-            issue_index--;
+function changeColor(entries) {
+    entries.forEach(entry => {
+        const intersecting = entry.isIntersecting;
+        
+        if (intersecting) {
+            let currentID = entry.target.id;
+            const bg = document.querySelector('body').style;
+    
+            switch (currentID) {
+                case 'issue8':
+                    bg.backgroundColor = '#f6e0a4';
+                    break;
+                case 'issue7':
+                    bg.backgroundColor = '#ff608c';
+                    break;
+                case 'issue6':
+                    bg.backgroundColor = '#fff';
+                    break;
+                case 'issue5':
+                    bg.backgroundColor = '#00c1b5';
+                    break;
+                case 'issue4':
+                    bg.backgroundColor = '#ff6519';
+                    break;
+                case 'issue3':
+                    bg.backgroundColor = '#ffbe00';
+                    break;
+                case 'issue2':
+                    bg.backgroundColor = '#1d3fbb';
+                    break;
+                case 'issue1':
+                    bg.backgroundColor = '#E30512';
+                    break;
+                default:
+                    bg.backgroundColor = '#000';
+            }
         }
+    });
+}
 
-        location.hash = issues[issue_index].id;
-    } else {
-        console.log('scrolling down');
-        if (issue_index < size) {
-            issue_index++;
-        }
-    }
+const observer = new IntersectionObserver(changeColor, {threshold : .5});
 
-    const currentID = issues[issue_index].id;
-    const bg= document.querySelector('body').style;
-    const buyLink = document.querySelector('.purchase-link > a').style;
-    const selectStoreLink = document.querySelector('.select-store-link > a').style;
-
-    console.log(currentID);
-
-    switch (currentID) {
-        case 'issue8':
-            bg.backgroundColor = '#f6e0a4';
-            break;
-        case 'issue7':
-            bg.backgroundColor = '#ff608c';
-            break;
-        case 'issue6':
-            bg.backgroundColor = '#fff';
-            break;
-    }
-});
+issues.forEach(issue => observer.observe(issue));

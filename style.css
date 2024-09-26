@@ -4,21 +4,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* scroll-behavior: smooth; */
-    /* outline: 1px dashed black; */
 }
-
-/* html {
-    scroll-snap-type: block mandatory;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    overscroll-behavior: contain;
-} */
 
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     font-family: "Roboto", sans-serif;
@@ -26,15 +16,10 @@ body {
     transition: all .9s;
 }
 
-/* main {
-
-} */
-
 .scroller {
     scroll-snap-type: y mandatory;
     overflow-y: auto;
     height: 100vh;
-    scroll-behavior: smooth;
 }
 
 .backstage-logo {

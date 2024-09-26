@@ -87,3 +87,16 @@ body {
     text-decoration: none;
     color: #fff;
 }
+
+.footer-section-left {
+    position: fixed;
+    left: 1rem;
+    bottom: 0;
+    width: 16rem;
+}
+
+.footer-section-right {
+    position: fixed;
+    bottom: 0;
+    right: 1rem;
+}

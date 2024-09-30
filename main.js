@@ -4,7 +4,7 @@ function handleIntersection(target) {
     document.documentElement.style.setProperty(`--base`, `var(--${target.id}-color)`);
 
     if (target.id == 'issue6') {
-        document.documentElement.style.setProperty(`--anchor`, `var(--anchor-active)`);
+        document.documentElement.style.setProperty(`--anchor`, `#e568ac`);
     } else {
         document.documentElement.style.setProperty(`--anchor`, `#fff`);
     }

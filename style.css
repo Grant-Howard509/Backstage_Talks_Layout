@@ -11,7 +11,6 @@
     --issue1-color: #E30512;
     --base: #f6e0a4;
     --anchor: #fff;
-    --anchor-active: #e568ac;
 }
 
 * {
@@ -22,9 +21,9 @@
 }
 
 html {
-    overflow: scroll;
-    scrollbar-width: none;
-    scroll-behavior: smooth;
+    /* overflow: scroll; */
+    /* scrollbar-width: none; */
+    /* scroll-behavior: smooth; */
 }
 
 body {
@@ -35,7 +34,7 @@ body {
 
 .scroller {
     scroll-snap-type: y mandatory;
-    overflow: scroll;
+    overflow-y: scroll;
     scrollbar-width: none;
     height: 100vh;
 }
@@ -60,6 +59,10 @@ body {
 
 .email-link:hover {
     text-decoration: underline solid #000;
+}
+
+.email-link-mobile {
+    display: none;
 }
 
 .issue-section {
@@ -140,6 +143,7 @@ body {
 .description {
     font-size: 1.125rem;
     line-height: 1.5625rem;
+    font-weight: 500;
 }
 
 .privacy-policy {
@@ -155,7 +159,9 @@ body {
 
 .copyright {
     display: block;
+    margin-top: .2rem;
     font-size: 0.75rem;
+    font-weight: 300;
 }
 
 .copyright > a {
@@ -180,5 +186,43 @@ li > a {
 
 li > a:hover {
     text-decoration: underline solid #000;
+}
+
+@media (max-width: 62rem) {
+    .scroller {
+        scroll-snap-type: none;
+        height: auto;
+    }
+
+    ul {
+        display: none;
+    }
+
+    .email-link {
+        display: none;
+    }
+
+    .email-link-mobile {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        bottom: .3rem;
+        font-size: 1.125rem;
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+    }
+
+    .email-link-mobile:hover {
+        text-decoration: underline;
+    }
+    .footer-section-left {
+        position: relative;
+    }
+
+    .footer-section-right {
+        position: relative;
+        right: auto;
+    }
 }
 

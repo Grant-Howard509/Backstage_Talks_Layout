@@ -226,3 +226,23 @@ li > a:hover {
     }
 }
 
+@media (max-width: 48rem) {
+    .footer-section-left {
+        text-align: center;
+        width: 100%;
+        left: auto;
+        bottom: auto;
+    }
+
+    .footer-section-right {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        bottom: auto;
+    }
+
+    .email-link-mobile {
+        position: relative;
+    }
+}
+

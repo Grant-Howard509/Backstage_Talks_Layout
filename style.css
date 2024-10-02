@@ -42,7 +42,7 @@ body {
 .backstage-logo {
     position: fixed;
     display: inline-block;
-    width: 16.25rem;
+    max-width: 16.25rem;
     left: 0.9375rem;
     top: 1.25rem;
 }
@@ -188,10 +188,10 @@ li > a:hover {
     text-decoration: underline solid #000;
 }
 
-@media (max-width: 62rem) {
+@media (max-width: 62rem) or (max-height: 40.625rem) {
     .scroller {
         scroll-snap-type: none;
-        height: auto;
+        height: 100%;
     }
 
     ul {
@@ -227,6 +227,10 @@ li > a:hover {
 }
 
 @media (max-width: 48rem) {
+    .backstage-logo {
+        max-width: 10rem;
+    }
+
     .footer-section-left {
         text-align: center;
         width: 100%;
